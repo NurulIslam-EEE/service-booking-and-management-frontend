@@ -23,7 +23,7 @@ const Sidebar = ({
   return (
     <Layout>
       <Content>
-        <Layout className="lg:flex hidden">
+        <Layout className="admin-sidebar">
           <Sider width={250} className="min-h-screen bg-gray-300">
             <Menu
               className="h-full px-3 bg-transparent py-1 bg-gray-300"
@@ -40,7 +40,7 @@ const Sidebar = ({
           </Sider>
           <Content className="bg-white p-4">{children}</Content>
         </Layout>
-        <Layout className="lg:hidden">
+        <Layout className="admin-sidebar-2">
           <Drawer
             title="Dashboard"
             placement="left"

@@ -43,7 +43,7 @@ const Navbar = ({
         {hasSider && (
           <Button
             type="primary"
-            className="lg:hidden"
+            className="lg-hidden-drawer"
             onClick={() => {
               dispatch(showSidebarDrawer());
             }}
@@ -58,12 +58,12 @@ const Navbar = ({
                 hasSider && "text-center lg:text-left"
               }`}
             >
-              Doctors Portal
+              Hoque Construction
             </Title>
           </Link>
         </Content>
         <Menu
-          className="lg:block hidden"
+          className="lg_block"
           disabledOverflow
           theme="dark"
           mode="horizontal"
@@ -91,12 +91,16 @@ const Navbar = ({
                 router.push("/login");
               }}
             >
-              Sign In / register
+              Register
             </Button>
           )}
         </Menu>
 
-        <Button type="primary" className="lg:hidden" onClick={showDrawer}>
+        <Button
+          className="lg-hidden-drawer"
+          type="primary"
+          onClick={showDrawer}
+        >
           <MenuOutlined />
         </Button>
         <Drawer title="Menu" placement="right" onClose={onClose} visible={open}>

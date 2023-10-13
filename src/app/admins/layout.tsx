@@ -1,4 +1,4 @@
-import AdminHeader from "@/components/Header/AdminHeader";
+import AdminHeader from "@/components/view/Header/AdminHeader";
 import AdminSidebar from "@/components/Sidebar/AdminSidebar/AdminSidebar";
 
 export default function AdminLayout({

@@ -7,6 +7,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Button, Form, Input } from "antd";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type Inputs = {
   email: string;
@@ -63,10 +64,11 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-container-align">
-      <div className="login-container">
-        <h3 className="">Login</h3>
-        {/* <Form onFinish={handleSubmit(onSubmit)} onFinishFailed={onFinishFailed}>
+    <>
+      <div className="login-container-align">
+        <div className="login-container">
+          <h3 className="">Login</h3>
+          {/* <Form onFinish={handleSubmit(onSubmit)} onFinishFailed={onFinishFailed}>
           <h3 className="">Login</h3>
           <Input
             placeholder="Email"
@@ -85,41 +87,48 @@ function LoginPage() {
        
           <Button htmlType="submit">Submit</Button>
         </Form> */}
-        <Form
-          name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
-          style={{ maxWidth: 600 }}
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-          layout="vertical"
-        >
-          <Form.Item<FieldType>
-            label="Email"
-            name="email"
-            rules={[{ required: true, message: "Please input your email!" }]}
+          <Form
+            name="basic"
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            style={{ maxWidth: 600 }}
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
+            layout="vertical"
           >
-            <Input type="email" />
-          </Form.Item>
+            <Form.Item<FieldType>
+              label="Email"
+              name="email"
+              rules={[{ required: true, message: "Please input your email!" }]}
+            >
+              <Input type="email" />
+            </Form.Item>
 
-          <Form.Item<FieldType>
-            label="Password"
-            name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
-          >
-            <Input.Password />
-          </Form.Item>
+            <Form.Item<FieldType>
+              label="Password"
+              name="password"
+              rules={[
+                { required: true, message: "Please input your password!" },
+              ]}
+            >
+              <Input.Password />
+            </Form.Item>
 
-          <Form.Item wrapperCol={{ offset: 8, span: 8 }}>
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
-          </Form.Item>
-        </Form>
+          </Form>
+          <p style={{ margin: "10px 0" }}>
+            Not register Yet{" "}
+            <Link style={{ fontWeight: "bold", color: "blue" }} href="/sign-up">
+              Sign Up
+            </Link>{" "}
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -4,8 +4,9 @@ const PublicHeader = () => {
   const items = [
     { key: "1", label: "Home", href: "/" },
 
-    { key: "4", label: "About Us", href: "/aboutUs" },
-    { key: "5", label: "Contact Us", href: "/contact-us" },
+    { key: "2", label: "About Us", href: "/aboutUs" },
+    { key: "3", label: "Contact Us", href: "/contact-us" },
+    { key: "4", label: "Services", href: "/services" },
   ];
   return (
     <>

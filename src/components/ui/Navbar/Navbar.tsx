@@ -91,7 +91,7 @@ const Navbar = ({
                 router.push("/login");
               }}
             >
-              Register
+              Login
             </Button>
           )}
         </Menu>

@@ -1,4 +1,4 @@
-import React from "react";
+import ServiceCard from "@/components/ui/ServiceCard/ServiceCard";
 
 function Services() {
   return (
@@ -14,6 +14,8 @@ function Services() {
           </div>
         </div>
       </div>
+
+      <ServiceCard />
     </section>
   );
 }

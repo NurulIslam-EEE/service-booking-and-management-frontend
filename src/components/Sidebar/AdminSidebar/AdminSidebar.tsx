@@ -7,8 +7,8 @@ const AdminSidebar = ({ children }: { children: React.ReactNode }) => {
     { key: "2", label: "Services", href: "/admins/services" },
     {
       key: "3",
-      label: "Available Services",
-      href: "/admins/available-services",
+      label: "Add Service",
+      href: "/admins/add-service",
     },
   ];
   return <Sidebar items={items}>{children}</Sidebar>;

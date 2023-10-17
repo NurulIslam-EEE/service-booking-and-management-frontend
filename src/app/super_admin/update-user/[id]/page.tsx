@@ -1,8 +1,8 @@
 "use client";
 
 import FormInput from "@/components/Forms/FormInput";
-import { useUserQuery } from "@/redux/api/userApi";
-import { Button, Col, Flex, Form, Input, Row, Select } from "antd";
+import { useUpdateUserMutation, useUserQuery } from "@/redux/api/userApi";
+import { Button, Col, Flex, Form, Input, Row, Select, message } from "antd";
 import { useEffect, useState } from "react";
 
 const { Option } = Select;
@@ -29,6 +29,8 @@ function UpdateUser({ params }: IDProps) {
   const [user, setUser] = useState<FieldType>({});
 
   const { data, isLoading } = useUserQuery(id);
+
+  const [updateUser] = useUpdateUserMutation();
   const [form] = Form.useForm();
 
   useEffect(() => {
@@ -38,7 +40,12 @@ function UpdateUser({ params }: IDProps) {
   }, [data]);
 
   const onFinish = async (values: any) => {
-    console.log("vvv", values);
+    try {
+      await updateUser({ id, body: values });
+      message.success("User updated successfully");
+    } catch (err: any) {
+      message.error(err?.message);
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -60,7 +67,7 @@ function UpdateUser({ params }: IDProps) {
     }
   };
 
-  console.log("ppp", data);
+  // console.log("ppp", data);
   if (isLoading) {
     return <p>Loading</p>;
   }
@@ -106,11 +113,9 @@ function UpdateUser({ params }: IDProps) {
             <Input type="text" />
           </Form.Item>
 
-          <Form.Item wrapperCol={{ offset: 8, span: 8 }}>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
         </Form>
       </Col>
     </Row>

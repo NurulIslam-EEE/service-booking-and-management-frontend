@@ -29,7 +29,28 @@ export const usersApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.user],
     }),
+    myProfile: build.query({
+      query: (token) => ({
+        url: `${ADMIN_URL}/my-profile/${token}`,
+        method: "GET",
+      }),
+      providesTags: [tagTypes.user],
+    }),
+
+    updateUser: build.mutation({
+      query: (data) => ({
+        url: `${ADMIN_URL}/${data.id}`,
+        method: "PATCH",
+        data: data.body,
+      }),
+      invalidatesTags: [tagTypes.user],
+    }),
   }),
 });
 
-export const { useUsersQuery, useUserQuery } = usersApi;
+export const {
+  useUsersQuery,
+  useUserQuery,
+  useUpdateUserMutation,
+  useMyProfileQuery,
+} = usersApi;

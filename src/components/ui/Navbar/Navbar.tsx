@@ -20,7 +20,7 @@ const Navbar = ({
   hasSider?: boolean;
   session?: boolean;
 }) => {
-  console.log(session, "session");
+  // console.log(session, "session");
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -58,7 +58,7 @@ const Navbar = ({
                 hasSider && "text-center lg:text-left"
               }`}
             >
-              Hoque Construction
+              HOQUE CONSTRUCTION
             </Title>
           </Link>
         </Content>
@@ -76,23 +76,23 @@ const Navbar = ({
           ))}
 
           {session ? (
-            <Button
-              type="primary"
+            <Menu.Item
+              key={"/login"}
               onClick={() => {
                 signOut();
               }}
             >
               Sign Out
-            </Button>
+            </Menu.Item>
           ) : (
-            <Button
-              type="primary"
+            <Menu.Item
+              key={"/login"}
               onClick={() => {
                 router.push("/login");
               }}
             >
               Login
-            </Button>
+            </Menu.Item>
           )}
         </Menu>
 

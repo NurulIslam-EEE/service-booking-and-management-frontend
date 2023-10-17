@@ -105,9 +105,57 @@ a {
     color-scheme: dark;
   }
 } */
+/* not found */
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.not-found-btn-tex {
+  display: flex;
+  flex-direction: column;
+}
 
+.not-found-btn-tex h1 {
+  font-size: 55px;
+}
+.not-found-btn-tex button {
+  margin: 15px 0;
+  padding: 10px 0;
+  cursor: pointer;
+  background: transparent;
+}
+.notfound-content {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.h-90vh {
+  min-height: 80vh;
+  min-width: 100%;
+}
 /* me */
+.h-screen {
+  min-height: 70vh;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
 
+.text-white {
+  color: white !important;
+}
+.text-center {
+  text-align: center;
+}
 .min-h-100 {
   min-height: 100vh;
 }

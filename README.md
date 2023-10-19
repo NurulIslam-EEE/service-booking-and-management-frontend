@@ -1,6 +1,6 @@
 # HOQUE CONSTRUCTION
 
-Live Link OF [Hoque Construction](https://nextjs.org/docs/deployment)
+Live Link OF [Hoque Construction](https://service-booking-and-management-frontend.vercel.app/)
 
 ## Features
 

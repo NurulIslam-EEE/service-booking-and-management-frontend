@@ -59,7 +59,7 @@ function ManageUsers() {
   };
   useEffect(() => {
     // fetchUser();
-    if (data?.users.length > 0) {
+    if (data?.users?.length > 0) {
       const res = data?.users?.map((user: any) => {
         return {
           key: user._id,

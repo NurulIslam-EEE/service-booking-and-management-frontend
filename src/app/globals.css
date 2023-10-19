@@ -551,6 +551,149 @@ margin: 0 auto; */
   background-color: transparent;
 }
 
+/* we are ready */
+.we-ready {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.we-ready .content {
+  width: 68%;
+}
+
+.we-ready .content button {
+  background-color: #c12834;
+  color: #fafafa;
+  border: 2px solid #c12834;
+  padding: 10px 24px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: 1s;
+}
+.we-ready .content button:hover {
+  background-color: transparent;
+  color: #c12834;
+}
+.we-ready h3 {
+  font-size: 3.75rem;
+  font-weight: 700;
+}
+
+.we-ready h3 span {
+  color: #c12834;
+}
+.we-ready .img {
+  width: 30%;
+}
+.we-are-ready-container button {
+  border: 0;
+  background-color: #49e670;
+  border-radius: 18px;
+  padding: 5px 20px;
+}
+.we-are-ready-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* service view */
+/* project-view-two-img-container */
+.project-view-two-container {
+  position: relative;
+}
+
+.float-text {
+  position: absolute;
+  left: -50%;
+  top: 40%;
+  font-size: 200px;
+  transform: rotate(-90deg);
+  color: rgba(139, 69, 19, 0.185);
+  z-index: 99;
+}
+.project-view-two-container h3 {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 3.125rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.project-view-two-container h3 span {
+  color: #c12834;
+}
+
+.project-view-two-container h3 div {
+  position: absolute;
+  background-color: #c12834;
+  height: 3px;
+  width: 18.75rem;
+  bottom: -10px;
+  left: 38%;
+}
+.project-view-two-img {
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+  /* opacity: 5; */
+}
+/* project-view-two-img-container */
+.project-view-two-container {
+  position: relative;
+}
+
+.float-text {
+  position: absolute;
+  left: -50%;
+  top: 40%;
+  font-size: 200px;
+  transform: rotate(-90deg);
+  color: rgba(139, 69, 19, 0.185);
+  z-index: 99;
+}
+.project-view-two-container h3 {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 3.125rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.project-view-two-container h3 span {
+  color: #c12834;
+}
+
+.project-view-two-container h3 div {
+  position: absolute;
+  background-color: #c12834;
+  height: 3px;
+  width: 18.75rem;
+  bottom: -10px;
+  left: 38%;
+}
+.project-view-two-img {
+  position: relative;
+  height: fit-content;
+  overflow: hidden;
+  /* opacity: 5; */
+}
+
+.float-text {
+  position: absolute;
+  left: -50%;
+  top: 40%;
+  font-size: 200px;
+  transform: rotate(-90deg);
+  color: rgba(139, 69, 19, 0.185);
+  z-index: 99;
+}
+
 /* admin */
 @media only screen and (max-width: 900px) {
   .admin-sidebar {

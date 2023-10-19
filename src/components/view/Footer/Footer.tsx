@@ -45,20 +45,10 @@ export default function Footer() {
             <h3 className="footer-title-hr">SERVICES</h3>
             <div className="footer-service d-flex">
               <ul>
-                <li>Painting</li>
-                <li>Plastering</li>
-                <li>Taping</li>
-                <li>Carpentry</li>
-                {/* <li>Wallpaper</li> */}
-                <li>Plumbing</li>
-              </ul>
-              <ul>
-                <li>Sheetrock Work</li>
-                <li>Tile Work</li>
-                <li>Roofing</li>
-                {/* <li>Stucco</li> */}
-                <li>Thoro-Coat</li>
-                <li>Brick Work</li>
+                <li>Interior Design</li>
+                <li>Removal Or Creation Of Wall</li>
+                <li>Fit-Out</li>
+                <li>Painting, Plumbing And Electricity</li>
               </ul>
             </div>
           </div>
@@ -71,12 +61,12 @@ export default function Footer() {
               <FaGreaterThan
                 style={{ height: "12px", width: "7.5px", marginRight: "10px" }}
               />{" "}
-              <Link className="footer-link" href="/about">
+              <Link className="footer-link" href="/aboutUs">
                 About Us
               </Link>
             </div>
 
-            <div>
+            {/* <div>
               {" "}
               <FaGreaterThan
                 style={{ height: "12px", width: "7.5px", marginRight: "10px" }}
@@ -84,7 +74,7 @@ export default function Footer() {
               <Link className="footer-link" href="/project">
                 Project
               </Link>
-            </div>
+            </div> */}
 
             <div>
               {" "}

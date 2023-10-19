@@ -28,7 +28,7 @@ export const authOptions: AuthOptions = {
             data?.accessToken,
             process.env.JWT_SECRET!
           );
-          console.log("authOptionsss", data);
+          // console.log("authOptionsss", data);
 
           if (res.ok && data) {
             return {
@@ -44,16 +44,16 @@ export const authOptions: AuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      console.log(token, "auth....");
-      console.log(user, "user....");
+      // console.log(token, "auth....");
+      // console.log(user, "user....");
       return {
         ...token,
         ...user,
       };
     },
     async session({ session, token }) {
-      console.log(token, "tttttt....");
-      console.log(session, "ssss....");
+      // console.log(token, "tttttt....");
+      // console.log(session, "ssss....");
       return {
         ...session,
         ...token,

@@ -33,7 +33,16 @@ const Sidebar = ({
             >
               {items?.map((item) => (
                 <Menu.Item key={item.key}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link
+                    style={
+                      getSelectedKey() === item.key
+                        ? { color: "" }
+                        : { color: "white" }
+                    }
+                    href={item.href}
+                  >
+                    {item.label}
+                  </Link>
                 </Menu.Item>
               ))}
             </Menu>

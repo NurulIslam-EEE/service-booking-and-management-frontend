@@ -1,25 +1,41 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Space, Table, Tag } from "antd";
+import { Button, Popconfirm, Space, Table, Tag, message } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useUsersQuery } from "@/redux/api/userApi";
+import { useDeleteUserMutation, useUsersQuery } from "@/redux/api/userApi";
+import Loader from "@/app/loading";
 
 interface DataType {
   key: string;
+
   name: string;
   role: string;
   address: string;
+  email: string;
 }
+
+const text = "Are you sure to delete the user?";
+const description = "Delete the task";
 
 function ManageUsers() {
   const [users, setUsers] = useState([]);
 
-  const { data } = useUsersQuery({});
+  const { data, isLoading } = useUsersQuery({});
 
-  console.log("qqqqqq", data);
+  const [deleteUser] = useDeleteUserMutation();
+
+  // console.log("qqqqqq", data);
+
+  const confirm = async (id: string) => {
+    const res = await deleteUser({ id });
+    // console.log(res, "deleteeee", id);
+    if (res) {
+      message.info("Successfully Deleted");
+    }
+  };
 
   // let data: DataType[] = [];
 
@@ -42,8 +58,20 @@ function ManageUsers() {
     }
   };
   useEffect(() => {
-    fetchUser();
-  }, []);
+    // fetchUser();
+    if (data?.users.length > 0) {
+      const res = data?.users?.map((user: any) => {
+        return {
+          key: user._id,
+          name: user.name,
+          role: user.role,
+          address: user.address,
+          email: user.email,
+        };
+      });
+      setUsers(res);
+    }
+  }, [data]);
 
   const columns: ColumnsType<DataType> = [
     {
@@ -55,6 +83,11 @@ function ManageUsers() {
       title: "Role",
       dataIndex: "role",
       key: "role",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
     },
     {
       title: "Address",
@@ -73,15 +106,28 @@ function ManageUsers() {
               }}
             >
               {" "}
-              <a>Edit</a>
+              <Button>Edit</Button>
             </Link>
+            <Popconfirm
+              placement="top"
+              title={text}
+              onConfirm={() => confirm(record?.key)}
+              okText="Yes"
+              cancelText="No"
+            >
+              <Button>Delete</Button>
+            </Popconfirm>
           </Space>
         );
       },
     },
   ];
 
-  console.log("super admin", users);
+  // console.log("super admin", users);
+
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div>
       <Table columns={columns} dataSource={users} />

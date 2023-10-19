@@ -15,7 +15,7 @@ const PublicHeader = () => {
   ];
   const { data: session, status } = useSession();
   // const session = await getServerSession(authOptions);
-  // console.log(session, "ssssss");
+  console.log(session, "ssssss");
   return (
     <>
       <Navbar session={session ? true : false} items={items} />

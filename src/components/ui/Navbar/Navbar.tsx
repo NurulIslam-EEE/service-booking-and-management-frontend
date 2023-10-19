@@ -75,6 +75,18 @@ const Navbar = ({
             </Menu.Item>
           ))}
 
+          {session && (
+            <Menu.Item key="/my-profile">
+              <Link href="/my-profile">My Profile</Link>
+            </Menu.Item>
+          )}
+
+          {session && (
+            <Menu.Item key="/dashboard">
+              <Link href="/dashboard">Dashboard</Link>
+            </Menu.Item>
+          )}
+
           {session ? (
             <Menu.Item
               key={"/login"}

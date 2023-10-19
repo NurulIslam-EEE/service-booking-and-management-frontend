@@ -105,6 +105,30 @@ a {
     color-scheme: dark;
   }
 } */
+
+/* my profile */
+
+.my-profile {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.my-profile .user-pic {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.my-profile p {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
 /* not found */
 .relative {
   position: relative;
@@ -210,7 +234,9 @@ a {
 .admin-container {
   min-height: 100vh;
 }
-
+.bg-gray-300 {
+  background: #2c3639 !important;
+}
 .admin-sidebar {
   display: flex;
 }

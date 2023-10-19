@@ -30,8 +30,8 @@ export const usersApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.user],
     }),
     myProfile: build.query({
-      query: (token) => ({
-        url: `${ADMIN_URL}/my-profile/${token}`,
+      query: (email) => ({
+        url: `${ADMIN_URL}/my-profile/${email}`,
         method: "GET",
       }),
       providesTags: [tagTypes.user],
@@ -45,6 +45,14 @@ export const usersApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: [tagTypes.user],
     }),
+
+    deleteUser: build.mutation({
+      query: (data) => ({
+        url: `${ADMIN_URL}/${data.id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: [tagTypes.user],
+    }),
   }),
 });
 
@@ -53,4 +61,5 @@ export const {
   useUserQuery,
   useUpdateUserMutation,
   useMyProfileQuery,
+  useDeleteUserMutation,
 } = usersApi;

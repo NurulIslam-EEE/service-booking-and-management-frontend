@@ -1,47 +1,23 @@
 "use client";
-import { useAddServiceMutation } from "@/redux/api/serviceApi";
-import { Button, Col, Form, Input, Row, message } from "antd";
+import { Button, Col, Form, Input, Row } from "antd";
 import TextArea from "antd/es/input/TextArea";
-import axios from "axios";
-import { useSession } from "next-auth/react";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 type FieldType = {
   title?: string;
   picture?: string;
   description: string;
 };
-function AddService() {
-  const [addService, isLoading] = useAddServiceMutation();
-
-  const [form] = Form.useForm();
-  const { data: session, status } = useSession();
-
-  const onFinish = async (values: any) => {
-    // console.log("vv", values);
-    try {
-      //@ts-ignore
-      await addService({ body: values, token: session?.accessToken });
-      // const res = await axios.post(
-      //   `http://localhost:5000/api/v1/services/create-service`,
-      //   values,
-      //   {
-
-      //     headers: { Authorization: session?.accessToken },
-      //   }
-      // );
-
-      message.success("Service added successfully");
-    } catch (err: any) {
-      message.error(err?.message);
-    }
-  };
+function BookPage() {
+  const onFinish = async (values: any) => {};
 
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
   return (
     <div>
+      {" "}
       <Row gutter={[16, 16]} justify="center" align="middle">
         <Col xs={{ span: 21 }} lg={{ span: 15 }}>
           <Form
@@ -75,4 +51,4 @@ function AddService() {
   );
 }
 
-export default AddService;
+export default BookPage;

@@ -54,8 +54,8 @@ const Navbar = ({
         <Content>
           <Link href="/">
             <Title
-              className={`m-0 text-white ${
-                hasSider && "text-center lg:text-left"
+              className={`m-0 nav-title text-white ${
+                hasSider && "text-center nav-title lg:text-left"
               }`}
             >
               HOQUE CONSTRUCTION
